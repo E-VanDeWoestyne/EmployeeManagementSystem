@@ -1,5 +1,6 @@
 namespace EmployeeManagement.Models
 {
+    // Full-time instructor employee with an office assignment.
     public class FTInstructor : FTEmployee
     {
         public string OfficeId { get; }

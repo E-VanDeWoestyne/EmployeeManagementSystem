@@ -1,5 +1,6 @@
 namespace EmployeeManagement.Models
 {
+    // Full-time payroll employee with a certification identifier.
     public class FTPayroll : FTEmployee
     {
         public string CertificateId { get; }
