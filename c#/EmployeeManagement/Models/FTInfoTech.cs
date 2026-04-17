@@ -1,5 +1,6 @@
 namespace EmployeeManagement.Models
 {
+    // Full-time IT employee with an assigned on-call group.
     public class FTInfoTech : FTEmployee
     {
         public string OnCallGroup { get; }

@@ -4,6 +4,7 @@ using InvalidDataException = EmployeeManagement.Exceptions.InvalidDataException;
 
 namespace EmployeeManagement.Models
 {
+    // Base class for part-time employees who are paid by hour.
     public class PTEmployee : Employee
     {
         public double Rate { get; }
@@ -26,12 +27,14 @@ namespace EmployeeManagement.Models
             Hours = hours;
         }
 
+        // Calculates and prints pay for part-time work.
         public override void GetPaid()
         {
             var payment = Rate * Hours;
             Console.WriteLine($"{Position} {FirstName} {LastName} receives a part-time payment of {payment:C} for {Hours} hours at {Rate:C} per hour.");
         }
 
+        // Includes bonus payment for part-time employees.
         public override void GetPaid(double bonus)
         {
             if (bonus < 0)

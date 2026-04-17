@@ -1,5 +1,6 @@
 namespace EmployeeManagement.Models
 {
+    // Part-time IT employee who is assigned a mentor.
     public class PTInfoTech : PTEmployee
     {
         public string MentorName { get; }

@@ -4,6 +4,7 @@ using InvalidDataException = EmployeeManagement.Exceptions.InvalidDataException;
 
 namespace EmployeeManagement.Models
 {
+    // Base class for full-time employees.
     public class FTEmployee : Employee
     {
         public double Salary { get; }
@@ -19,11 +20,13 @@ namespace EmployeeManagement.Models
             Salary = salary;
         }
 
+        // Full-time salary payment logic.
         public override void GetPaid()
         {
             Console.WriteLine($"{Position} {FirstName} {LastName} receives salary payment of {Salary:C}.");
         }
 
+        // Full-time salary plus bonus logic.
         public override void GetPaid(double bonus)
         {
             if (bonus < 0)
@@ -34,6 +37,7 @@ namespace EmployeeManagement.Models
             Console.WriteLine($"{Position} {FirstName} {LastName} receives salary payment of {Salary:C} plus bonus {bonus:C}.");
         }
 
+        // Override report message for full-time employees.
         public override void ReportToManager()
         {
             Console.WriteLine($"{Position} {FirstName} {LastName} reports to the manager with a full-time employee workload.");

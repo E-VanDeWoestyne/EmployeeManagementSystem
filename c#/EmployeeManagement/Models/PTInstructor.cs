@@ -1,5 +1,6 @@
 namespace EmployeeManagement.Models
 {
+    // Part-time instructor employee with a maximum weekly hour limit.
     public class PTInstructor : PTEmployee
     {
         public int MaxHours { get; }

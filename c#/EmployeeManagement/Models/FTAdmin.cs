@@ -2,6 +2,7 @@ using System;
 
 namespace EmployeeManagement.Models
 {
+    // Full-time administrative employee with an access code for secure systems.
     public class FTAdmin : FTEmployee
     {
         public string AccessCode { get; }
@@ -14,6 +15,7 @@ namespace EmployeeManagement.Models
                 : throw new ArgumentException("Access code cannot be null or empty.", nameof(accessCode));
         }
 
+        // Specific manager report behavior for an admin employee.
         public override void ReportToManager()
         {
             Console.WriteLine($"FT Admin {FirstName} {LastName} reports to the manager and uses access code {AccessCode}.");

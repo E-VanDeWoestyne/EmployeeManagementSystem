@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace EmployeeManagement.Models
 {
+    // Simple manager class that tracks a list of subordinate employees.
     public class Manager
     {
         public List<Employee> Subordinates { get; }
@@ -22,6 +23,7 @@ namespace EmployeeManagement.Models
             Subordinates.Add(employee);
         }
 
+        // Prints a summary of employees managed by this manager.
         public void ReportToManager()
         {
             Console.WriteLine($"Manager has {Subordinates.Count} subordinate(s) reporting to them.");
