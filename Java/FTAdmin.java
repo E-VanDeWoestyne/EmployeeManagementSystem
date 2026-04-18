@@ -11,12 +11,24 @@ public class FTAdmin extends FTEmployee {
         Departments department,
         double salary,
         String access_code
-    ) {
+    ) throws InvalidDataException {
         super(id, first_name, last_name, dob, position, department, salary);
-        this.access_code = access_code;
+        setAccessCode(access_code);
     }
 
     @Override
     public void reportToManager() {
+        System.out.println("Admin employee " + getFirstName() + " " + getLastName() + " reports to Manager.");
+    }
+
+    public String getAccessCode() {
+        return access_code;
+    }
+
+    public void setAccessCode(String access_code) throws InvalidDataException {
+        if (access_code == null || access_code.isBlank()) {
+            throw new InvalidDataException("Access code is required.");
+        }
+        this.access_code = access_code;
     }
 }

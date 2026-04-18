@@ -430,3 +430,4 @@ FodyWeavers.xsd
 # Custom project ignores
 employees.txt
 EmployeeManagement.sln
+*.class

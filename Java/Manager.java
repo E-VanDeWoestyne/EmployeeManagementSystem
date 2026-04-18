@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Manager extends FTEmployee {
@@ -13,12 +14,25 @@ public class Manager extends FTEmployee {
         Departments department,
         double salary,
         List<Employee> subordinates
-    ) {
+    ) throws InvalidDataException {
         super(id, first_name, last_name, dob, position, department, salary);
-        this.subordinates = subordinates;
+        setSubordinates(subordinates);
     }
 
     @Override
     public void reportToManager() {
+        System.out.println("Manager " + getFirstName() + " " + getLastName() + " reports to executive leadership.");
+    }
+
+    public List<Employee> getSubordinates() {
+        return subordinates;
+    }
+
+    public void setSubordinates(List<Employee> subordinates) {
+        if (subordinates == null) {
+            this.subordinates = new ArrayList<>();
+            return;
+        }
+        this.subordinates = subordinates;
     }
 }

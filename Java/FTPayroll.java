@@ -11,12 +11,24 @@ public class FTPayroll extends FTEmployee {
         Departments department,
         double salary,
         String certificate_id
-    ) {
+    ) throws InvalidDataException {
         super(id, first_name, last_name, dob, position, department, salary);
-        this.certificate_id = certificate_id;
+        setCertificateId(certificate_id);
     }
 
     @Override
     public void reportToManager() {
+        System.out.println("Payroll employee " + getFirstName() + " " + getLastName() + " reports to Manager.");
+    }
+
+    public String getCertificateId() {
+        return certificate_id;
+    }
+
+    public void setCertificateId(String certificate_id) throws InvalidDataException {
+        if (certificate_id == null || certificate_id.isBlank()) {
+            throw new InvalidDataException("Certificate id is required.");
+        }
+        this.certificate_id = certificate_id;
     }
 }
